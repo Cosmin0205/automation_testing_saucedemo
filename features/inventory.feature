@@ -1,4 +1,4 @@
-Feature: Check inventory funtionality
+Feature: Check inventory functionality
   Background:
     Given login: I am an user on the login page
     When login: I fill the username with value "standard_user"
@@ -11,7 +11,22 @@ Feature: Check inventory funtionality
       Then inventory: Settings list is displayed
   @test2
     Scenario: Check the logo is displayed
-      Then inventory: logo is displayed
+      Then inventory: Logo is displayed
     Scenario: Click the cart icon
       When inventory: I click on the cart icon
-      Then cart: Thr URL has changed
+      Then cart: The URL has changed
+
+     @test3
+      Scenario: Check the remove button
+       When inventory: I click on the add backpack button
+       Then inventory: Remove button is displayed
+
+       @test4
+        Scenario: Click the logout button
+         When inventory: I click the setting button
+         Then inventory: I click the logout button
+        @test5
+        Scenario: Check the remove button
+        When inventory: I click the bikelight button
+        Then inventory: Remove button bike is displayed
+
